@@ -1,3 +1,32 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8d4b3;
+    padding: 10px;
+    position: absolute;
+    bottom: -50px; /* Adjust as per your layout */
+    width: calc(100% - 40px); /* Adjust padding */
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center; /* Centers content for each section */
+}
+
+/* You can add this if you want the text and links to align to the left and right */
+.footer-section:first-child {
+    text-align: left;
+}
+
+.footer-section:last-child {
+    text-align: right;
+}
+
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
