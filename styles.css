@@ -1,31 +1,45 @@
 footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: #e8d4b3;
     padding: 10px;
     position: absolute;
     bottom: -50px; /* Adjust as per your layout */
-    width: calc(100% - 40px); /* Adjust padding */
+    width: 100%;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-section {
-    flex: 1;
-    text-align: center; /* Centers content for each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* You can add this if you want the text and links to align to the left and right */
-.footer-section:first-child {
-    text-align: left;
+.footer-section.left {
+    align-items: flex-start;
 }
 
-.footer-section:last-child {
-    text-align: right;
+.footer-section.center {
+    align-items: center;
 }
 
+.footer-section.right {
+    align-items: flex-end;
+}
 
+.footer-link {
+    color: #333;
+    text-decoration: none;
+    margin: 4px 0; /* Space out the links vertically */
+}
 
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Rest of the CSS remains unchanged */
 
 * {
     box-sizing: border-box;
@@ -117,4 +131,42 @@ footer p {
 
 .footer-link:hover {
     text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) { /* Adjust this breakpoint as needed */
+    .top-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-container, .image-container {
+        flex-basis: auto;
+        padding: 10px 0; /* Add some vertical spacing */
+    }
+
+    .image-container {
+        order: 2; /* Puts the image between the title and the button */
+    }
+
+    .text-container {
+        order: 1; /* Ensure title is above the image */
+    }
+
+    .start-button {
+        order: 3; /* Ensure button is below the image */
+    }
+}
+
+/* Ensure footer elements stack vertically on smaller screens */
+@media (max-width: 600px) { /* Adjust this breakpoint as needed */
+    .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px; /* Add some spacing between sections */
+    }
+
+    .footer-section.right {
+        display: none; /* Hide the empty right section */
+    }
 }
